@@ -1,0 +1,560 @@
+marine_site_name,marine_sort_order,survey_rep,year,pc_point_type,Min(sample_date)
+Pyramid Point,5000,1,2014,full_points,2014-05-18
+Pyramid Point,5000,2,2018,first_points,2018-06-01
+Point Saint George,5005,1,2014,full_points,2014-05-20
+Point Saint George,5005,2,2018,none,2018-08-14
+Point Saint George,5005,3,2019,none,2019-08-03
+Point Saint George,5005,4,2020,none,2020-06-23
+Enderts,5010,1,2014,full_points,2014-07-10
+Enderts,5010,2,2014,none,2014-11-07
+Enderts,5010,3,2018,full_points,2018-05-29
+Enderts,5010,4,2019,first_points,2019-05-21
+Enderts,5010,5,2021,full_points,2021-05-27
+Enderts,5010,6,2022,first_points,2022-05-20
+Damnation Creek,5020,1,2004,full_points,2004-06-02
+Damnation Creek,5020,2,2015,full_points,2015-05-19
+Damnation Creek,5020,3,2017,full_points,2017-05-28
+Damnation Creek,5020,4,2019,full_points,2019-05-20
+Damnation Creek,5020,5,2020,first_points,2020-06-07
+Damnation Creek,5020,6,2022,full_points,2022-05-18
+Damnation Creek,5020,7,2023,first_points,2023-05-09
+False Klamath Cove,5030,1,2014,full_points,2014-05-16
+False Klamath Cove,5030,2,2014,none,2014-11-08
+False Klamath Cove,5030,3,2017,full_points,2017-05-27
+False Klamath Cove,5030,4,2018,first_points,2018-05-30
+False Klamath Cove,5030,5,2020,full_points,2020-06-05
+False Klamath Cove,5030,6,2021,first_points,2021-05-26
+False Klamath Cove,5030,8,2023,full_points,2023-05-06
+Palmers Point,5040,1,2015,full_points,2015-05-20
+Launcher Beach,5045,1,2014,first_points,2014-08-10
+Launcher Beach,5045,2,2018,full_points,2018-06-03
+Old Home Beach,5046,1,2014,first_points,2014-08-12
+Cape Mendocino,5050,1,2002,full_points,2002-05-28
+Cape Mendocino,5050,2,2006,full_points,2006-04-30
+Cape Mendocino,5050,3,2015,full_points,2015-06-17
+Shelter Cove,5060,1,2001,full_points,2001-07-21
+Shelter Cove,5060,2,2006,full_points,2006-04-28
+Shelter Cove,5060,3,2014,full_points,2014-06-16
+Mal Coombs,5061,1,2014,first_points,2014-07-14
+Mal Coombs,5061,2,2018,full_points,2018-07-15
+Kibesillah Hill,5070,1,2001,full_points,2001-07-20
+Kibesillah Hill,5070,2,2003,full_points,2003-06-03
+Kibesillah Hill,5070,3,2007,full_points,2007-05-17
+Kibesillah Hill,5070,4,2014,full_points,2014-06-14
+Kibesillah Hill,5070,5,2018,first_points,2018-07-14
+Kibesillah Hill,5070,6,2020,full_points,2020-08-04
+Abalobadiah Creek,5071,1,2015,full_points,2015-06-02
+Abalobadiah Creek,5071,2,2018,first_points,2018-07-13
+MacKerricher,5075,1,2015,full_points,2015-06-06
+MacKerricher,5075,2,2018,first_points,2018-07-12
+MacKerricher,5075,3,2020,full_points,2020-08-03
+Fort Bragg,5076,1,2015,full_points,2015-06-04
+Point Arena,5100,1,2010,full_points,2010-05-13
+Point Arena,5100,2,2017,first_points,2017-06-26
+Point Arena,5100,3,2021,full_points,2021-06-27
+Stornetta,5110,1,2004,full_points,2004-05-05
+Stornetta,5110,2,2007,full_points,2007-05-19
+Stornetta,5110,3,2016,none,2016-06-05
+Stornetta,5110,4,2020,full_points,2020-07-21
+Moat Creek,5120,1,2010,full_points,2010-05-15
+Moat Creek,5120,2,2020,full_points,2020-07-23
+Saunders Reef,5130,1,2010,full_points,2010-05-16
+Saunders Reef,5130,2,2014,first_points,2014-07-15
+Saunders Reef,5130,3,2020,full_points,2020-07-22
+Del Mar Landing,5140,1,2010,full_points,2010-05-17
+Del Mar Landing,5140,2,2017,first_points,2017-06-24
+Del Mar Landing,5140,3,2020,full_points,2020-07-07
+Sea Ranch,5150,1,2001,full_points,2001-08-04
+Sea Ranch,5150,2,2005,full_points,2005-06-09
+Sea Ranch,5150,3,2010,full_points,2010-05-18
+Sea Ranch,5150,4,2018,first_points,2018-06-15
+Sea Ranch,5150,5,2019,none,2019-06-17
+Sea Ranch,5150,6,2020,none,2020-07-21
+Sea Ranch,5150,7,2020,full_points,2020-08-19
+Stewarts Point,5155,1,2017,first_points,2017-06-27
+Stewarts Point,5155,2,2021,full_points,2021-06-28
+Phillips Gulch,5160,1,2010,full_points,2010-05-26
+Phillips Gulch,5160,2,2020,full_points,2020-07-08
+Gerstle Cove,5170,1,2010,full_points,2010-05-28
+Gerstle Cove,5170,2,2017,none,2017-06-27
+Gerstle Cove,5170,3,2021,full_points,2021-06-26
+Windermere Point,5180,1,2010,full_points,2010-05-29
+North Jenner Beach,5190,1,2010,full_points,2010-05-30
+Bodega,5200,1,2001,full_points,2001-07-07
+Bodega,5200,2,2003,full_points,2003-05-31
+Bodega,5200,3,2004,full_points,2004-05-19
+Bodega,5200,4,2010,full_points,2010-05-31
+Bodega,5200,5,2012,first_points,2012-11-13
+Bodega,5200,6,2016,none,2016-06-04
+Bodega,5200,7,2017,first_points,2017-07-25
+Bodega,5200,8,2018,none,2018-07-26
+Bodega,5200,9,2019,none,2019-07-30
+Bodega,5200,10,2020,full_points,2020-06-24
+Bodega,5200,12,2023,first_points,2023-06-17
+Horseshoe Cove,5201,1,2012,first_points,2012-11-11
+Horseshoe Cove,5201,2,2018,full_points,2018-06-17
+Horseshoe Cove,5201,3,2023,first_points,2023-06-18
+Bodega Head,5210,1,2010,full_points,2010-06-01
+Santa Maria Creek,5220,1,2002,full_points,2002-05-14
+Santa Maria Creek,5220,2,2005,full_points,2005-05-09
+Santa Maria Creek,5220,3,2010,full_points,2010-08-10
+Santa Maria Creek,5220,4,2013,first_points,2013-12-14
+Santa Maria Creek,5220,5,2015,none,2015-01-03
+Santa Maria Creek,5220,6,2018,first_points,2018-06-18
+Santa Maria Creek,5220,7,2021,full_points,2021-05-15
+Chimney Rock,5230,1,2010,full_points,2010-07-14
+Chimney Rock,5230,2,2017,first_points,2017-07-24
+Bolinas Point,5240,1,2002,full_points,2002-05-16
+Bolinas Point,5240,2,2005,full_points,2005-05-11
+Bolinas Point,5240,3,2005,first_points,2005-11-02
+Bolinas Point,5240,4,2008,full_points,2008-02-16
+Bolinas Point,5240,5,2013,first_points,2013-12-13
+Bolinas Point,5240,6,2020,full_points,2020-06-22
+Bolinas Point Wreck,5250,1,2005,first_points,2005-05-27
+Bolinas Point Wreck,5250,2,2005,first_points,2005-10-17
+Alder Creek; Duxbury,5260,1,2008,full_points,2008-02-15
+Alcatraz,5430,1,2005,full_points,2005-02-07
+Mussel Flat Farallones,5510,1,2005,full_points,2005-02-03
+Mussel Flat Farallones,5510,2,2017,first_points,2017-12-17
+Fitzgerald Marine Reserve,5530,1,2002,full_points,2002-11-05
+Fitzgerald Marine Reserve,5530,2,2006,full_points,2006-11-19
+Fitzgerald Marine Reserve,5530,3,2011,full_points,2011-09-28
+Fitzgerald Marine Reserve,5530,4,2014,first_points,2014-01-15
+Fitzgerald Marine Reserve,5530,5,2017,first_points,2017-05-30
+Fitzgerald Marine Reserve,5530,6,2020,full_points,2020-02-07
+Pigeon Point,6000,1,2002,full_points,2002-11-03
+Pigeon Point,6000,2,2006,full_points,2006-10-06
+Pigeon Point,6000,3,2013,first_points,2013-11-15
+Pigeon Point,6000,4,2018,first_points,2018-01-29
+Pigeon Point,6000,5,2020,full_points,2020-01-10
+Ano Nuevo,6020,1,2002,full_points,2002-06-11
+Ano Nuevo,6020,2,2008,full_points,2008-04-10
+Ano Nuevo,6020,3,2013,first_points,2013-11-14
+Ano Nuevo,6020,4,2017,first_points,2017-05-28
+Ano Nuevo,6020,5,2021,full_points,2021-06-13
+Scott Creek,6030,0.5,2000,full_points,2000-01-19
+Scott Creek,6030,1,2003,full_points,2003-01-15
+Scott Creek,6030,2,2006,full_points,2006-12-03
+Scott Creek,6030,3,2016,none,2016-03-19
+Scott Creek,6030,4,2017,first_points,2017-03-08
+Scott Creek,6030,5,2018,none,2018-01-31
+Scott Creek,6030,6,2020,full_points,2020-01-09
+Davenport Landing,6040,1,2007,full_points,2007-10-12
+Davenport Landing,6040,2,2018,first_points,2018-01-30
+Davenport Landing,6040,3,2018,none,2018-06-28
+Davenport Landing,6040,4,2019,none,2019-06-08
+Davenport Landing,6040,5,2020,full_points,2020-01-08
+Davenport Landing,6040,6,2020,none,2020-05-10
+Sandhill Bluff,6050,0.5,2000,full_points,2000-01-17
+Sandhill Bluff,6050,1,2004,full_points,2004-05-20
+Sandhill Bluff,6050,2,2017,first_points,2017-10-19
+Sandhill Bluff,6050,3,2020,full_points,2020-05-28
+Wilder Ranch,6060,1,2007,full_points,2007-10-11
+Terrace Point,6070,0.5,2000,full_points,2000-01-21
+Terrace Point,6070,1,2003,full_points,2003-01-16
+Terrace Point,6070,2,2006,full_points,2006-01-10
+Terrace Point,6070,3,2015,none,2015-06-07
+Terrace Point,6070,4,2016,none,2016-05-26
+Terrace Point,6070,5,2017,first_points,2017-01-25
+Terrace Point,6070,6,2021,full_points,2021-05-31
+Natural Bridges,6080,1,2007,full_points,2007-10-10
+Natural Bridges,6080,2,2016,none,2016-08-03
+Hopkins,6090,0.5,2000,full_points,2000-03-17
+Hopkins,6090,1,2003,full_points,2003-01-18
+Hopkins,6090,2,2006,full_points,2006-12-01
+Hopkins,6090,3,2013,first_points,2013-11-16
+Hopkins,6090,4,2017,first_points,2017-03-09
+Hopkins,6090,5,2021,full_points,2021-06-12
+Point Pinos,6100,1,2007,full_points,2007-11-07
+Point Pinos,6100,2,2017,first_points,2017-05-01
+Point Pinos,6100,3,2021,full_points,2021-06-14
+Asilomar,6105,1,2012,none,2012-10-29
+China Rocks,6110,1,2007,full_points,2007-11-09
+China Rocks,6110,2,2017,first_points,2017-12-02
+China Rocks,6110,3,2020,full_points,2020-03-05
+Stillwater,6130,1,2001,full_points,2001-02-07
+Stillwater,6130,2,2005,full_points,2005-04-29
+Stillwater,6130,3,2014,first_points,2014-01-14
+Stillwater,6130,4,2015,none,2015-05-08
+Stillwater,6130,5,2016,none,2016-04-12
+Stillwater,6130,6,2017,first_points,2017-04-05
+Stillwater,6130,7,2020,full_points,2020-03-09
+Point Lobos,6150,1,2001,full_points,2001-02-18
+Point Lobos,6150,2,2005,full_points,2005-03-07
+Point Lobos,6150,3,2014,first_points,2014-01-13
+Point Lobos,6150,4,2017,first_points,2017-04-04
+Point Lobos,6150,5,2020,full_points,2020-02-06
+Garrapata,6170,1,2007,full_points,2007-11-06
+Garrapata,6170,2,2018,first_points,2018-01-28
+Garrapata,6170,3,2020,full_points,2020-02-08
+Andrew Molera,6190,1,2001,full_points,2001-02-20
+Andrew Molera,6190,2,2003,full_points,2003-03-29
+Andrew Molera,6190,3,2004,full_points,2004-02-03
+Andrew Molera,6190,4,2017,first_points,2017-04-29
+Andrew Molera,6190,5,2020,full_points,2020-05-27
+Partington Cove,6200,1,2003,full_points,2003-11-23
+Partington Cove,6200,2,2004,full_points,2004-04-11
+Lucia,6210,1,2004,full_points,2004-04-12
+Mill Creek,6220,1,2001,full_points,2001-02-05
+Mill Creek,6220,2,2003,full_points,2003-11-22
+Mill Creek,6220,3,2004,full_points,2004-04-09
+Mill Creek,6220,4,2017,first_points,2017-12-04
+Mill Creek,6220,5,2020,full_points,2020-05-26
+Duck Pond,6240,1,2003,full_points,2003-11-24
+Duck Pond,6240,2,2008,full_points,2008-02-05
+Point Sierra Nevada,6250,1,2001,full_points,2001-04-03
+Point Sierra Nevada,6250,2,2003,full_points,2003-04-18
+Point Sierra Nevada,6250,3,2004,full_points,2004-04-08
+Point Sierra Nevada,6250,4,2017,full_points,2017-02-08
+Point Sierra Nevada,6250,5,2018,none,2018-07-15
+Point Sierra Nevada,6250,6,2019,none,2019-06-05
+Point Sierra Nevada,6250,7,2020,none,2020-05-09
+Point Sierra Nevada,6250,8,2021,full_points,2021-02-25
+Point Sierra Nevada,6250,9,2022,none,2022-06-16
+Piedras Blancas,6260,1,2008,full_points,2008-01-19
+Piedras Blancas,6260,2,2017,first_points,2017-03-09
+Piedras Blancas,6260,3,2021,full_points,2021-07-26
+San Simeon Point,6270,1,2007,full_points,2007-09-27
+Vista del Mar,6280,1,2008,full_points,2008-01-18
+Vista del Mar,6280,2,2018,none,2018-06-17
+Vista del Mar,6280,3,2019,none,2019-06-20
+Vista del Mar,6280,4,2020,none,2020-05-08
+Vista del Mar,6280,5,2021,full_points,2021-07-25
+Rancho Marino; Cambria,6290,1,2001,full_points,2001-03-04
+Rancho Marino; Cambria,6290,2,2005,full_points,2005-07-23
+Rancho Marino; Cambria,6290,3,2021,full_points,2021-07-24
+Cayucos Silvetia,6309,1,2022,full_points,2022-01-28
+Cayucos,6310,1,2001,full_points,2001-04-04
+Cayucos,6310,2,2008,full_points,2008-02-03
+Cayucos,6310,3,2017,full_points,2017-02-10
+Cayucos,6310,4,2022,full_points,2022-03-01
+Hazards,6320,1,2001,full_points,2001-03-24
+Hazards,6320,2,2005,full_points,2005-03-05
+Hazards,6320,3,2017,full_points,2017-02-09
+Hazards,6320,4,2018,none,2018-07-14
+Hazards,6320,5,2019,none,2019-06-19
+Hazards,6320,6,2020,none,2020-05-10
+Hazards,6320,7,2022,full_points,2022-02-28
+Diablo,6330,1,2008,full_points,2008-01-20
+Diablo,6330,2,2017,first_points,2017-03-07
+Shell Beach,6340,1,2001,full_points,2001-03-23
+Shell Beach,6340,2,2006,full_points,2006-03-24
+Shell Beach,6340,3,2019,full_points,2019-03-04
+Shell Beach Silvetia,6341,1,2021,full_points,2021-11-19
+Stairs,6370,1,2001,full_points,2001-03-19
+Stairs,6370,2,2003,full_points,2003-03-25
+Stairs,6370,3,2004,full_points,2004-02-02
+Stairs,6370,4,2017,full_points,2017-02-07
+Stairs,6370,5,2022,full_points,2022-02-27
+Lompoc Landing,6380,1,2007,full_points,2007-03-19
+Lompoc Landing,6380,3,2014,none,2014-10-09
+Lompoc Landing,6380,4,2015,none,2015-01-05
+Lompoc Landing,6380,5,2015,none,2015-04-16
+Lompoc Landing,6380,6,2015,none,2015-09-29
+Lompoc Landing,6380,7,2016,none,2016-02-08
+Lompoc Landing,6380,8,2016,none,2016-11-13
+Lompoc Landing,6380,9,2018,none,2018-01-12
+Lompoc Landing,6380,10,2018,none,2018-07-13
+Lompoc Landing,6380,11,2019,none,2019-01-04
+Lompoc Landing,6380,12,2019,none,2019-06-04
+Lompoc Landing,6380,13,2020,none,2020-02-06
+Lompoc Landing,6380,14,2020,none,2020-06-06
+Lompoc Landing,6380,15,2020,none,2020-12-13
+Lompoc Landing,6380,16,2022,none,2022-06-15
+Boat House,6390,1,2001,full_points,2001-03-21
+Boat House,6390,2,2007,full_points,2007-03-18
+Boat House,6390,3,2017,full_points,2017-12-01
+Boat House,6390,4,2020,full_points,2020-03-07
+Tarantulas,6395,1,2018,full_points,2018-12-05
+Tarantulas,6395,2,2019,full_points,2019-07-18
+Tarantulas,6395,3,2021,full_points,2021-06-14
+Point Conception,6398,1,2019,full_points,2019-12-10
+Government Point,6400,1,2001,full_points,2001-05-01
+Government Point,6400,2,2006,full_points,2006-03-27
+Government Point,6400,3,2016,full_points,2016-05-09
+Government Point,6400,4,2019,full_points,2019-12-11
+Owl Bluff,6402,1,2022,full_points,2022-12-05
+Alegria Silvetia,6419,1,2021,full_points,2021-11-18
+Alegria,6420,1,2001,full_points,2001-05-26
+Alegria,6420,2,2003,full_points,2003-05-17
+Alegria,6420,3,2004,full_points,2004-05-10
+Alegria,6420,4,2012,full_points,2012-01-05
+Alegria,6420,4.1,2015,none,2015-01-22
+Alegria,6420,5,2015,none,2015-05-22
+Alegria,6420,6,2016,full_points,2016-02-20
+Alegria,6420,8,2016,none,2016-05-23
+Alegria,6420,9,2017,none,2017-05-29
+Alegria,6420,10,2018,none,2018-05-18
+Alegria,6420,11,2019,none,2019-01-05
+Alegria,6420,12,2019,none,2019-06-03
+Alegria,6420,13,2020,none,2020-02-07
+Alegria,6420,14,2020,none,2020-06-05
+Alegria,6420,15,2021,none,2021-11-18
+Alegria,6420,16,2022,none,2022-06-14
+Arroyo Hondo,6440,1,2001,full_points,2001-05-02
+Arroyo Hondo,6440,2,2005,full_points,2005-04-04
+Arroyo Hondo,6440,5,2016,full_points,2016-02-21
+Arroyo Hondo,6440,6,2016,none,2016-05-11
+Arroyo Hondo,6440,7,2022,full_points,2022-02-25
+Ellwood,6450,1,2012,full_points,2012-01-06
+Coal Oil Point,6460,1,2002,full_points,2002-03-13
+Coal Oil Point,6460,2,2006,full_points,2006-03-25
+Coal Oil Point,6460,3,2012,full_points,2012-01-07
+Coal Oil Point,6460,4.1,2014,none,2014-10-10
+Coal Oil Point,6460,4.2,2015,none,2015-01-06
+Coal Oil Point,6460,4.3,2015,none,2015-02-15
+Coal Oil Point,6460,4.4,2015,none,2015-04-15
+Coal Oil Point,6460,5,2015,none,2015-05-21
+Coal Oil Point,6460,6.1,2015,none,2015-09-30
+Coal Oil Point,6460,6.2,2015,none,2015-10-25
+Coal Oil Point,6460,6.3,2016,none,2016-02-09
+Coal Oil Point,6460,7,2016,full_points,2016-02-17
+Coal Oil Point,6460,8,2016,none,2016-04-11
+Coal Oil Point,6460,9,2016,none,2016-06-07
+Coal Oil Point,6460,10,2016,none,2016-11-12
+Coal Oil Point,6460,11,2017,none,2017-03-24
+Coal Oil Point,6460,16,2019,none,2019-12-13
+Coal Oil Point,6460,19,2021,full_points,2021-06-13
+Carpinteria,6480,1,2001,full_points,2001-06-07
+Carpinteria,6480,2,2012,full_points,2012-01-09
+Carpinteria,6480,3,2014,none,2014-02-11
+Carpinteria,6480,3.1,2015,none,2015-01-18
+Carpinteria,6480,3.2,2015,none,2015-03-17
+Carpinteria,6480,4,2019,full_points,2019-02-18
+Mussel Shoals,6500,1,2001,full_points,2001-05-23
+Mussel Shoals,6500,2.1,2015,none,2015-10-29
+Mussel Shoals,6500,3,2016,full_points,2016-02-18
+Mussel Shoals,6500,4,2016,none,2016-06-08
+Mussel Shoals,6500,5,2019,none,2019-11-13
+Mussel Shoals,6500,6,2022,full_points,2022-02-26
+Old Stairs,6520,1,2001,full_points,2001-05-27
+Old Stairs,6520,2,2008,full_points,2008-03-15
+Old Stairs,6520,3,2013,first_points,2013-01-27
+Old Stairs,6520,4,2019,full_points,2019-02-17
+Deer Creek,6525,1,2013,first_points,2013-01-26
+Deer Creek,6525,2,2018,full_points,2018-01-13
+Sequit Point,6540,1,2009,first_points,2009-11-29
+Sequit Point,6540,2,2013,full_points,2013-01-22
+Sequit Point,6540,3,2014,none,2014-02-12
+Sequit Point,6540,3.1,2014,none,2014-03-12
+Sequit Point,6540,3.15,2014,none,2014-04-03
+Sequit Point,6540,3.2,2014,none,2014-04-17
+Sequit Point,6540,3.3,2014,none,2014-05-19
+Sequit Point,6540,3.4,2014,none,2014-06-26
+Sequit Point,6540,3.5,2014,none,2014-10-07
+Sequit Point,6540,3.6,2015,none,2015-01-19
+Sequit Point,6540,3.7,2015,none,2015-03-16
+Sequit Point,6540,3.8,2015,none,2015-12-09
+Sequit Point,6540,3.9,2016,none,2016-05-12
+Sequit Point,6540,4,2018,first_points,2018-01-14
+Sequit Point,6540,5,2021,full_points,2021-06-12
+Lechuza Point,6560,1,2009,first_points,2009-12-01
+Lechuza Point,6560,2,2013,full_points,2013-01-23
+Lechuza Point,6560,3,2014,none,2014-02-12
+Lechuza Point,6560,3.1,2014,none,2014-03-11
+Lechuza Point,6560,3.2,2014,none,2014-04-01
+Lechuza Point,6560,3.3,2014,none,2014-04-17
+Lechuza Point,6560,3.4,2014,none,2014-10-08
+Lechuza Point,6560,3.5,2015,none,2015-01-19
+Lechuza Point,6560,3.6,2015,none,2015-03-16
+Lechuza Point,6560,4,2018,first_points,2018-01-15
+Point Dume,6575,1,2013,first_points,2013-01-25
+Paradise Cove,6580,1,2001,full_points,2001-04-26
+Paradise Cove,6580,2,2006,full_points,2006-02-27
+Paradise Cove,6580,3,2010,first_points,2010-02-27
+Paradise Cove,6580,4,2013,first_points,2013-01-24
+Paradise Cove,6580,5,2018,full_points,2018-03-25
+Paradise Cove,6580,6,2021,full_points,2021-06-11
+Lunada Bay,6584,1,2022,full_points,2022-01-29
+Point Vicente,6585,1,2012,full_points,2012-02-04
+Point Vicente,6585,2,2013,none,2013-03-10
+Point Vicente,6585,3,2014,none,2014-02-13
+Point Vicente,6585,4,2015,none,2015-01-20
+Point Vicente,6585,5,2015,none,2015-04-13
+Abalone Cove,6595,1,2012,full_points,2012-02-03
+Abalone Cove,6595,3,2015,none,2015-01-21
+Abalone Cove,6595,4,2015,none,2015-04-14
+Royal Palms,6599,1,2022,full_points,2022-01-30
+White Point,6600,1,2001,full_points,2001-05-28
+White Point,6600,2,2008,full_points,2008-03-14
+White Point,6600,3,2018,full_points,2018-03-26
+Point Fermin,6620,1,2001,full_points,2001-06-09
+Point Fermin,6620,2,2012,full_points,2012-01-20
+Point Fermin,6620,3,2019,full_points,2019-02-19
+Buck Gully South,6640,1,2009,first_points,2009-11-15
+Buck Gully South,6640,2,2013,first_points,2013-02-10
+Crystal Cove,6660,1,2001,full_points,2001-04-29
+Crystal Cove,6660,2,2003,full_points,2003-05-19
+Crystal Cove,6660,3,2004,full_points,2004-05-09
+Crystal Cove,6660,4,2012,full_points,2012-01-19
+Crystal Cove,6660,5,2014,none,2014-02-14
+Crystal Cove,6660,5.1,2014,none,2014-04-02
+Crystal Cove,6660,5.2,2015,none,2015-01-04
+Crystal Cove,6660,5.3,2015,none,2015-04-22
+Crystal Cove,6660,5.4,2016,none,2016-12-13
+Crystal Cove,6660,6,2018,full_points,2018-03-27
+Muddy Canyon,6665,1,2013,first_points,2013-02-06
+Shaws Cove,6680,1,2001,none,2001-04-29
+Shaws Cove,6680,2,2005,full_points,2005-04-02
+Shaws Cove,6680,3,2012,full_points,2012-01-18
+Shaws Cove,6680,4,2014,none,2014-02-14
+Shaws Cove,6680,5,2017,full_points,2017-01-13
+Heisler Park,6700,1,2009,first_points,2009-12-12
+Heisler Park,6700,2,2013,first_points,2013-02-05
+Heisler Park,6700,3,2020,full_points,2020-01-13
+Treasure Island,6720,1,2017,full_points,2017-01-12
+Dana Point,6740,1,2001,full_points,2001-05-08
+Dana Point,6740,2,2006,full_points,2006-02-25
+Dana Point,6740,3,2010,first_points,2010-02-26
+Dana Point,6740,4,2013,first_points,2013-02-07
+Dana Point,6740,5,2018,full_points,2018-03-28
+Dana Point,6740,6,2020,full_points,2020-01-12
+Cardiff Reef,6760,1,2012,full_points,2012-02-06
+Scripps Reef,6780,1,2002,full_points,2002-03-24
+Scripps Reef,6780,2,2006,full_points,2006-02-23
+Scripps Reef,6780,3,2010,first_points,2010-02-25
+Scripps Reef,6780,4,2013,first_points,2013-01-11
+Scripps Reef,6780,5,2014,none,2014-03-03
+Scripps Reef,6780,6,2014,none,2014-04-19
+Scripps Reef,6780,7,2014,none,2014-05-20
+Scripps Reef,6780,8,2014,none,2014-06-27
+Scripps Reef,6780,9,2015,none,2015-01-03
+Scripps Reef,6780,10,2015,none,2015-04-20
+Scripps Reef,6780,11,2020,full_points,2020-01-08
+La Jolla Caves,6800,1,2009,first_points,2009-11-13
+La Jolla Caves,6800,2,2013,first_points,2013-01-07
+La Jolla Caves,6800,3,2020,full_points,2020-02-07
+Wind and Sea,6802,1,2012,full_points,2012-03-07
+Wind and Sea,6802,2,2013,none,2013-03-08
+Wind and Sea,6802,3,2018,first_points,2018-02-01
+Wind and Sea,6802,4,2020,full_points,2020-02-06
+Sea Ridge,6804,1,2012,none,2012-03-08
+Sea Ridge,6804,3,2017,first_points,2017-02-09
+Sunset Cliffs,6819,1,2022,full_points,2022-01-31
+Navy North,6820,1,2012,full_points,2012-02-08
+Cabrillo I,6860,1,2002,full_points,2002-03-26
+Cabrillo I,6860,2,2004,full_points,2004-05-07
+Cabrillo I,6860,3,2009,first_points,2009-12-14
+Cabrillo I,6860,4,2013,first_points,2013-01-09
+Cabrillo I,6860,6,2020,full_points,2020-01-09
+Cabrillo III,6900,1,2002,full_points,2002-03-23
+Cabrillo III,6900,2,2012,full_points,2012-03-06
+Cabrillo III,6900,4,2017,full_points,2017-01-10
+Cuyler Harbor,7020,1,2001,full_points,2001-11-13
+Cuyler Harbor,7020,2,2002,full_points,2002-12-04
+Cuyler Harbor,7020,3,2012,full_points,2012-03-14
+Cuyler Harbor,7020,4,2014,none,2014-12-03
+Crook Point,7030,1,2001,full_points,2001-11-14
+Crook Point,7030,2,2012,full_points,2012-03-15
+Crook Point,7030,3,2014,none,2014-12-05
+Fossil Reef,7100,1,2001,full_points,2001-12-13
+Fossil Reef,7100,2,2004,full_points,2004-12-12
+NW Talcott,7110,1,2001,full_points,2001-12-12
+NW Talcott,7110,2,2004,full_points,2004-12-13
+Carrington Point,7116,1,2017,full_points,2017-11-17
+East Point,7120,1,2001,full_points,2001-12-11
+East Point,7120,2,2004,full_points,2004-12-09
+East Point,7120,3,2015,none,2015-03-18
+Ford Point,7130,1,2001,full_points,2001-12-15
+Ford Point,7130,2,2017,first_points,2017-11-18
+Johnsons Lee,7140,1,2001,full_points,2001-12-14
+Johnsons Lee,7140,2,2002,full_points,2002-12-01
+Johnsons Lee,7140,3,2004,full_points,2004-12-11
+Johnsons Lee,7140,4,2017,first_points,2017-11-19
+South Point,7150,1,2017,full_points,2017-11-15
+Trailer,7200,1,2002,full_points,2002-01-10
+Trailer,7200,2,2006,full_points,2006-01-27
+Forney,7210,1,2002,full_points,2002-01-09
+Fraser Cove,7220,1,2002,full_points,2002-01-10
+Fraser Cove,7220,2,2003,full_points,2003-01-30
+Fraser Cove,7220,3,2004,full_points,2004-01-17
+Fraser Cove,7220,4,2014,none,2014-11-21
+Orizaba Cove,7230,1,2022,full_points,2022-02-25
+Pelican Bay,7235,1,2022,full_points,2022-02-24
+Prisoners Harbor,7240,1,2002,full_points,2002-01-08
+Prisoners Harbor,7240,2,2003,full_points,2003-04-20
+Prisoners Harbor,7240,3,2004,full_points,2004-01-16
+Prisoners Harbor,7240,5,2022,none,2022-02-26
+Prisoners Harbor Silvetia,7241,1,2022,full_points,2022-02-26
+Valley,7260,1,2002,full_points,2002-01-12
+Valley,7260,2,2006,full_points,2006-01-28
+Willows Anchorage,7280,1,2002,full_points,2002-01-12
+Willows Anchorage,7280,2,2006,full_points,2006-01-25
+Cat Rock,7300,1,2001,full_points,2001-10-18
+Cat Rock,7300,2,2005,full_points,2005-12-11
+Middle West,7310,1,2001,full_points,2001-10-17
+Middle West,7310,2,2005,full_points,2005-12-13
+Middle West,7310,3,2012,full_points,2012-03-05
+Middle West,7310,3.1,2014,none,2014-03-13
+Middle West,7310,5,2018,first_points,2018-01-27
+Middle West,7310,6,2021,full_points,2021-11-17
+S Frenchys Cove,7330,1,2001,full_points,2001-10-15
+S Frenchys Cove,7330,2,2005,full_points,2005-12-12
+S Frenchys Cove,7330,3,2012,full_points,2012-03-04
+S Frenchys Cove,7330,3.1,2014,none,2014-03-13
+Landing Cove,7400,1,2001,full_points,2001-11-30
+Landing Cove,7400,2,2006,full_points,2006-11-02
+Landing Cove,7400,4,2020,full_points,2020-10-15
+Sea Lion Rookery,7410,1,2001,full_points,2001-11-30
+Sea Lion Rookery,7410,2,2006,full_points,2006-11-04
+Sea Lion Rookery,7410,4,2020,full_points,2020-10-16
+Thousand Springs,7500,1,2003,full_points,2003-02-26
+Thousand Springs,7500,2,2007,full_points,2007-02-15
+Thousand Springs,7500,3,2013,first_points,2013-03-06
+Tranquility Beach,7510,1,2009,first_points,2009-12-29
+Tranquility Beach,7510,2,2013,first_points,2013-03-07
+Marker Poles,7520,1,2003,full_points,2003-02-27
+Marker Poles,7520,2,2007,full_points,2007-02-16
+Marker Poles,7520,3,2013,first_points,2013-03-08
+Two Harbors,7600,1,2010,first_points,2010-01-27
+Two Harbors,7600,2,2013,first_points,2013-02-24
+Two Harbors,7600,3,2018,full_points,2018-02-13
+Bird Rock,7610,1,2002,full_points,2002-04-20
+Bird Rock,7610,2,2004,full_points,2004-01-20
+Bird Rock,7610,3,2007,full_points,2007-03-13
+Bird Rock,7610,4,2013,first_points,2013-02-25
+Bird Rock,7610,5,2020,full_points,2020-02-19
+Big Fisherman Cove,7620,1,2010,first_points,2010-01-28
+Big Fisherman Cove,7620,2,2013,first_points,2013-02-21
+Big Fisherman Cove,7620,3,2018,full_points,2018-02-11
+Big Fisherman Cove,7620,4,2020,first_points,2020-02-22
+Goat Harbor,7630,1,2010,first_points,2010-01-25
+Goat Harbor,7630,2,2013,first_points,2013-02-23
+Goat Harbor,7630,3,2018,full_points,2018-02-12
+Goat Harbor,7630,4,2020,first_points,2020-02-20
+Avalon Quarry,7640,1,2010,first_points,2010-01-29
+Avalon Quarry,7640,2,2013,first_points,2013-02-22
+Little Harbor,7650,1,2002,full_points,2002-04-21
+Little Harbor,7650,2,2007,full_points,2007-03-15
+Little Harbor,7650,3,2018,first_points,2018-02-14
+Little Harbor,7650,4,2020,full_points,2020-02-21
+West Cove,7700,1,2013,full_points,2013-01-07
+West Cove,7700,3,2019,full_points,2019-01-31
+North Head,7704,1,2014,none,2014-02-28
+North Head,7704,2,2020,full_points,2020-02-10
+Graduation Point,7706,1,2014,full_points,2014-02-27
+Graduation Point,7706,2,2020,full_points,2020-01-25
+Boy Scout Camp,7710,1,2009,full_points,2009-10-16
+Boy Scout Camp,7710,2,2013,full_points,2013-01-10
+Boy Scout Camp,7710,3,2019,full_points,2019-02-03
+Eel Point,7730,1,2009,full_points,2009-10-17
+Eel Point,7730,2,2013,full_points,2013-01-11
+Eel Point,7730,3,2014,none,2014-02-26
+Eel Point,7730,4,2020,full_points,2020-01-23
+La Bufadora,8100,1,2003,full_points,2003-02-12
+La Chorera,8300,1,2003,full_points,2003-02-14
+Punta Baja,8400,1,2003,full_points,2003-02-15
+El Tivo,8530,1,2007,full_points,2007-03-02
+El Tivo,8530,2,2011,full_points,2011-02-18
+Babencho Grande,8550,1,2007,full_points,2007-02-28
+Babencho Grande,8550,2,2011,full_points,2011-02-17
+El Nido,8560,1,2007,full_points,2007-03-01
+El Nido,8560,2,2011,full_points,2011-02-14
+La Cueva,8570,1,2007,full_points,2007-02-26
+La Cueva,8570,2,2011,full_points,2011-02-15
+La Plana,8580,1,2007,full_points,2007-02-27
+La Plana,8580,2,2011,full_points,2011-02-16
+Punta Rompiente,8600,1,2003,full_points,2003-02-19
+Punta San Roque,8650,1,2003,full_points,2003-02-18
+Punta Abreojos,8700,1,2003,full_points,2003-02-17
+Punta Libertad,9020,1,2003,full_points,2003-03-20
