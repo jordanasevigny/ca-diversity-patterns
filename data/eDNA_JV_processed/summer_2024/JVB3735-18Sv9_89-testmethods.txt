@@ -1,0 +1,58 @@
+
+Sample Process
+1.4.5
+Sample barcodes were recorded and assigned a corresponding lysate tube. Sample filters, lysis buffer,and proteinase K were heated to 56 C for one hour. Under a laminar flow hood, warm lysis buffers were pushed through the filter housing, and all supernatant was collected in the corresponding lysate tube. Tubes were placed in an incubator overnight at 56 C. After incubation the lysate tubes were immediately processed.
+
+
+Extraction
+2.6.1
+Genomic DNA from samples was extracted using the Omega Biotek Mag-Bind Blood & Tissue DNA HDQ 96 Kit (4x96 Preps) (Cat. No. / ID: M6399-01) according to the manufacturer’s protocol. Whole (25mm or 47mm) filters were used for genomic DNA extraction. The extraction protocol was automated and completed using a Hamilton Microlab Starlet. Genomic DNA was eluted into 100 µl and frozen at -20 C.
+
+
+PCR
+3.50.1
+Forward primer: TTGTACACACCGCCC
+Reverse primer: CCTTCYGCAGGTTCACCTAC
+Primer notes: 1389F, 1510R
+Primer reference: Amaral-Zettler et al. 2009
+
+A portion of the ribosomal 18S RNA gene was PCR amplified from each genomic DNA sample using the 1389F and 1510R primers. Both forward and reverse primers also contained a 5’ adaptor sequence to allow for subsequent indexing and Illumina sequencing. Each 25 µL PCR reaction was mixed according to the Promega PCR Master Mix specifications (Promega catalog # M5133, Madison, WI) which included 12.5ul Master Mix, 0.5 µl of each primer, 1.0 µl of gDNA, and 10.5 µl DNase/RNase-free H2O. DNA was PCR amplified using the following conditions: initial denaturation at 94 C for 3 minutes, followed by 30 cycles of 30 seconds at 94 C, 1 minute at 57°C, 90 seconds at 72 C, and a final elongation at 72 C for 10 minutes.
+
+
+Gel
+4.1.1
+To determine amplicon size and PCR efficiency, each reaction was visually inspected using a 2% agarose gel with 5µl of each sample as input. 
+
+
+PCR Amplicon Cleanup
+5.1.1
+Amplicons were then cleaned by incubating amplicons with Exo1/SAP for 30 minutes at 37C following by inactivation at 95C for 5 minutes and stored at -20C. 
+
+
+Barcoding PCR
+6.2.1
+A second round of PCR was performed to complete the sequencing library construct, appending the final Illumina sequencing adapters and integrating sample-specific, dual index sequences (2 x 10bp). The indexing PCR included Promega Master mix, 0.5 µM of each primer and 2 µl of template DNA (cleaned amplicon from the first PCR reaction) and consisted of an initial denaturation of 95 °C for 3 minutes followed by 8 cycles of  95 °C for 30 sec, 55 °C for 30 seconds and 72 °C for 30 seconds. 
+
+
+PCR Normal Pool
+8.2.1
+Final indexed amplicons from each sample were cleaned and normalized using mag-bind normalization. A 15µl aliquot of PCR amplicon was purified and normalized using Cytiva SpeedBead magnetic carboxylate modified particles (#45152105050250). Samples were then pooled together by adding 5µl of each normalized sample to the pool.
+
+
+Sequencing
+9.9.1
+Sample library pools were prepped for sequencing on an Oxford Nanopore Technologies MinION (Oxford, England) using the Ligation Sequencing Kit V14 (cat# SQK-LSK114). Final basecalling was completed using AWS Batch and EC2 g5.xlarge instances running ONT's dorado software (v0.7.1) in super high accuracy mode using the dna_r10.4.1_e8.2_400bps_sup@v5.0.0 basecalling model.
+
+
+Bioinformatics
+10.11.2
+Raw sequence data were demultiplexed using pheniqs v2.1.0 [1], enforcing strict matching of sample barcode indices (i.e, no errors). Cutadapt v3.4 [2] was then used remove gene primers from the forward and reverse reads, discarding any read pairs where one or both primers (including a 6 bp, fully degenerate prefix) were not found at the expected location (5’) with an error rate < 0.15. Read pairs were then merged using vsearch v2.15.2 [3], discarding resulting sequences with a length of < 130 bp, > 210 bp, or with a maximum expected error rate [4] > 0.5 bp. For each sample, reads were then clustered using the unoise3 denoising algorithm [5] as implemented in vsearch, using an alpha value of 5 and discarding unique raw sequences observed less than 8 times. Counts of the resulting exact sequence variants (ESVs) were then compiled and putative chimeras were removed using the uchime3 algorithm, as implemented in vsearch. For each final ESV, a consensus taxonomy was assigned using a custom best-hits algorithm and a reference database consisting of publicly available sequences (GenBank [6]) as well as Jonah Ventures voucher sequences records. Reference database searching used an exhaustive semi-global pairwise alignment with vsearch, and match quality was quantified using a custom, query-centric approach, where the % match ignores terminal gaps in the target sequence, but not the query sequence. The consensus taxonomy was then generated using either all 100% matching reference sequences or all reference sequences within 1% of the top match, accepting the reference taxonomy for any taxonomic level with > 90% agreement across the top hits. 
+
+References:
+1. Galanti, Shasha and Gunsalus (2021). Pheniqs 2.0: accurate, high-performance Bayesian decoding and confidence estimation for combinatorial barcode indexing. BMC Bioinformatics 22.
+2. Martin (2011), Cutadapt removes adapter sequences from high-throughput sequencing reads. EMBnet. journal 17.
+3. Torbjørn et al. VSEARCH: a versatile open source tool for metagenomics. PeerJ 4 e2584 (2016).
+4. Edgar and Flyvbjerg (2015), Error filtering, pair assembly and error correction for next-generation sequencing reads. Bioinformatics 31. 
+5. Edgar (2016), UNOISE2: improved error-correction for Illumina 16S and ITS amplicon sequencing. doi: https://doi.org/10.1101/081257.
+6. Benson et al. (2005), GenBank. Nucleic Acids Res 33.
+
