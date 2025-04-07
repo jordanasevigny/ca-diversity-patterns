@@ -18,7 +18,7 @@ world <- ne_countries(scale = "medium", returnclass = "sf")
 class(world)
 
 # load in data
-survey_taxa_dmy <- data.frame(read.csv("./data/MARINe_survey_taxa_dmy.csv", header=TRUE))
+survey_taxa_dmy <- data.frame(read.csv("./data/preliminary_processed_data/filtered_MARINe_survey_taxa_dmy.csv", header=TRUE))
 
 # add a column of the unique survey ID
 survey_taxa_dmy$survey_ID <- paste(survey_taxa_dmy$site_code, survey_taxa_dmy$survey_rep, sep="_")

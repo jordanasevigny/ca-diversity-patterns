@@ -20,6 +20,8 @@ survey_taxa_dmy <- merge(survey_taxa, survey_dates, by=c("marine_site_name", "su
 # write the dataset to data folder
 write.csv(x=survey_taxa_dmy, file="./data/MARINe_survey_taxa_dmy.csv")
 
+
+survey_taxa_dmy <- data.frame(read.csv("./data/preliminary_processed_data/MARINe_survey_taxa_dmy.csv"))
 # check for empty dates
 any(is.na(survey_taxa_dmy$sample_date))
 # no missing dates
@@ -30,4 +32,6 @@ ggplot(data=survey_taxa_dmy, aes(x=lowest_taxonomic_resolution)) +
 ggsave("taxa_resolution_count.png")
 # could do everything at genus level... 
 
-
+demo <- survey_taxa_dmy %>%
+  select(marine_site_name) %>%
+  distinct()

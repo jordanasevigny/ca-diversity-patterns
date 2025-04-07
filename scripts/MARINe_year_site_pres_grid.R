@@ -14,10 +14,9 @@ library(dplyr)
 library(tidyverse)
 
 # load in MARINe data
-survey_taxa_dmy <- data.frame(read.csv("./data/MARINe_survey_taxa_dmy.csv", header=TRUE))
-
+survey_taxa_dmy <- data.frame(read.csv("./data/preliminary_processed_data/MARINe_survey_taxa_dmy.csv", header=TRUE))
 # load in eDNA site data
-eDNA <- read.csv("./data/eDNA_sites.csv", header=TRUE)
+eDNA <- read.csv("./data/preliminary_processed_data/eDNA_sites.csv", header=TRUE)
 
 # years - site data
 years_sites <- survey_taxa_dmy %>%
@@ -76,9 +75,11 @@ frames <- all_combinations %>%
 
 ggplot(all_combinations, aes(x=year, y=lat_ID)) +
   geom_tile(aes(fill=surveyed)) +
-  scale_fill_manual(values=c("0"="white", "1"="pink3")) +
-  geom_rect(data=frames, fill=NA, color="black",
-            aes(xmin=as.numeric(year)-0.5, xmax=as.numeric(year)+0.5, ymin=lat_ID-0.5, ymax=lat_ID+0.5), size=0.25)
+  scale_fill_manual(values=c("0"="white", "1"="#00BFC4")) +
+  geom_rect(data=frames, fill=NA, color="#F8776D",
+            aes(xmin=as.numeric(year)-0.5, xmax=as.numeric(year)+0.5, ymin=lat_ID-0.5, ymax=lat_ID+0.5), size=0.25) +
+  ylab("Site ID ordered latitudinally") +
+  ggtitle("Site vs Year surveyed (boxed rows = eDNA site sampled 2024)")
 
 
 

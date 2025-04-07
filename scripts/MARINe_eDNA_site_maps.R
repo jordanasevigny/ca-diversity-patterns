@@ -18,13 +18,14 @@ class(world)
 # load in data
 MARINe_df <- data.frame(read.csv("./data/preliminary_processed_data/filtered_MARINe_survey_taxa_dmy.csv", header=TRUE)) %>%
   filter(year %in% c(2001, 2002, 2003)) %>%
+#  select(c("marine_site_name", "latitude", "longitude", "site_id")) %>%
   select(c("marine_site_name", "latitude", "longitude")) %>%
   distinct() %>%
   rename(Sites = marine_site_name, Latitude = latitude, Longitude = longitude) %>%
   mutate(Source = "MARINe")
-#write.csv(MARINe_df, './data/preliminary_processed_data/filtered_MARINe_sites_2001-2003.csv')
+# write.csv(MARINe_df, './data/preliminary_processed_data/filtered_MARINe_sites_2001-2003.csv')
 
-eDNA_site_df <- data.frame(read.csv("./data/eDNA_sites.csv", header=TRUE)) %>%
+eDNA_site_df <- data.frame(read.csv("./data/preliminary_processed_data/eDNA_sites.csv", header=TRUE)) %>%
   select(c("Sites", "Latitude", "Longitude")) %>%
   mutate(Source = "eDNA")
 
@@ -39,6 +40,15 @@ ggplot(data = world) +
   coord_sf(xlim = c(-110, -130), ylim = c(25, 45), expand = FALSE) +
   facet_wrap(~ Source) 
 ggsave("./preliminary_figures/filtered_MARINe_2001-2003_eDNA_site_map.png")
+
+
+ggplot(data = world) +
+  geom_sf() +
+  geom_point(data = combo_df, aes(x = Longitude, y = Latitude, color = Source), size = 2.5, alpha = 0.7) +
+  xlab("Longitude") + ylab("Latitude") +
+  ggtitle("eDNA Summer 2024 and MARINe 2001-2003 survey sites") +
+  coord_sf(xlim = c(-110, -130), ylim = c(25, 45), expand = FALSE)
+
 
 # 2001 only
 
@@ -174,3 +184,13 @@ ggplot(data = world) +
   ggtitle("eDNA survey sites") +
   coord_sf(xlim = c(-110, -130), ylim = c(25, 45), expand = FALSE)
 ggsave("preliminary_figures/eDNA_site_map.png")
+
+
+# MARINe map
+ggplot(data = world) +
+  geom_sf() +
+  geom_point(data = MARINe_df, aes(x = Longitude, y = Latitude), size = 2.5) +
+  xlab("Longitude") + ylab("Latitude") +
+  ggtitle("MARINe survey sites 2001-2003 - excludes islands") +
+  coord_sf(xlim = c(-110, -130), ylim = c(25, 45), expand = FALSE)
+ggsave("preliminary_figures/filtered_MARINe_map.png")

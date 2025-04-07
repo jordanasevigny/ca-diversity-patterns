@@ -37,7 +37,9 @@ survey_tax_min_dmy <- survey_taxa_dmy %>%
   arrange(sample_date) %>%
   filter(sample_date == min(sample_date)) %>%
   ungroup()
-
+df2 <- survey_tax_min_dmy %>%
+  select(c('marine_site_name', 'site_id')) %>%
+  distinct()
 # make new column of combo species or genus depending on what is lowest tax. Species_lump seemed messier
 survey_tax_min_dmy$low_tax_name <- ifelse(survey_tax_min_dmy$Species == "NULL", survey_tax_min_dmy$Genus, survey_tax_min_dmy$Species)
 

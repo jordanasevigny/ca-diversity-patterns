@@ -5,7 +5,7 @@ library(tidyverse)
 library(betapart)
 
 # load data
-survey_taxa_dmy <- data.frame(read.csv("./data/filtered_MARINe_survey_taxa_dmy.csv", header=TRUE))
+survey_taxa_dmy <- data.frame(read.csv("./data/preliminary_processed_data/filtered_MARINe_survey_taxa_dmy.csv", header=TRUE))
 
 ## the data needs to be cleaned (some are species, some genus, some appear to have multiple names)
 ## this version will use species & genus and just 2001-2003
@@ -22,10 +22,21 @@ survey_taxa_dmy$survey_ID <- paste(survey_taxa_dmy$site_code, survey_taxa_dmy$su
 # Taxanomic levels to use in order from narrowest to broadest!!
 taxa <- c("Species", "Genus")
 
-# clean the data to only use 2001-2003 data
+# # clean the data to only use 2001-2003 data
+# survey_tax_min_dmy <- survey_taxa_dmy %>%
+#   filter(lowest_taxonomic_resolution %in% taxa) %>%
+#   filter(year %in% c(2001, 2002, 2003)) %>%
+#   mutate(sample_date = as.Date(sample_date)) %>%
+#   group_by(marine_site_name) %>%
+#   arrange(sample_date) %>%
+#   filter(sample_date == min(sample_date)) %>%
+#   ungroup() %>%
+#   filter(latitude > 32.5)
+
+# clean the data to use all but post 2020 data
 survey_tax_min_dmy <- survey_taxa_dmy %>%
   filter(lowest_taxonomic_resolution %in% taxa) %>%
-  filter(year %in% c(2001, 2002, 2003)) %>%
+  filter(year <= 2020) %>%
   mutate(sample_date = as.Date(sample_date)) %>%
   group_by(marine_site_name) %>%
   arrange(sample_date) %>%
@@ -36,9 +47,9 @@ survey_tax_min_dmy <- survey_taxa_dmy %>%
 # make new column of combo species or genus depending on what is lowest tax. Species_lump seemed messier
 survey_tax_min_dmy$low_tax_name <- ifelse(survey_tax_min_dmy$Species == "NULL", survey_tax_min_dmy$Genus, survey_tax_min_dmy$Species)
 
-# drop all columns but survey_ID and lowest taxonomy and deduplicate (a genus issue)
+# drop all columns but site_ID and lowest taxonomy and deduplicate (a genus issue)
 survey_low_tax <- survey_tax_min_dmy %>%
-  select(c("survey_ID", "low_tax_name")) %>%
+  select(c("site_id", "low_tax_name")) %>%
   distinct()
 
 # add presence column then pivot and fill remaining cells with 0
@@ -49,9 +60,9 @@ presence_absence_matrix <- as.data.frame(presence_absence_matrix)
 
 # should add a warning it that ensures the col and row len = unique species and sites/surveys
 # set row names to site and remove site as a column
-rownames(presence_absence_matrix) <- presence_absence_matrix$survey_ID
+rownames(presence_absence_matrix) <- presence_absence_matrix$site_id
 presence_absence_matrix <- presence_absence_matrix %>% 
-  select(-survey_ID)
+  select(-site_id)
 
 comm_data <- presence_absence_matrix
 # Initialize a matrix to store directional nestedness values
@@ -76,7 +87,7 @@ for (site_a in 1:nrow(comm_data)) {
     
     # Store the value in the matrix
     nestedness_matrix[site_a, site_b] <- directional_nestedness
-  
+    
   }
 }
 
@@ -93,36 +104,11 @@ site_lat <- survey_tax_min_dmy %>%
 
 # force the site ID's into numerical integer order
 nestedness_df2 <- nestedness_df %>%
-  separate(Var1, into = c("site_code_1", "survey_rep_1"), sep = "_") %>%
-  separate(Var2, into = c("site_code_2", "survey_rep_2"), sep = "_") %>%
-  select(-c("survey_rep_1", "survey_rep_2")) %>%
-#  group_by(site_code_1, site_code_2) %>%
-#  summarize(avg_diss = mean(Freq)) %>%
-  ungroup() %>%
-  full_join(site_lat, by="site_code_1") %>%
-  select(-site_code) %>%
-  arrange(latitude) %>%
-  mutate(site_code_1 = factor(site_code_1, levels=unique(site_code_1))) %>%
-  group_by(site_code_1) %>%
-  mutate(site_code_1ID = as.integer(site_code_1)) %>%
-  ungroup()
-
-key <- nestedness_df2 %>%
-  select(c('site_code_1', 'site_code_1ID')) %>%
-  distinct()
-key$site_code_1 <- as.character(key$site_code_1)
-nestedness_df2$site_code_2ID <- NA
-for (i in 1:nrow(nestedness_df2)) {
-  for (k in 1:nrow(key)) {
-    if (nestedness_df2$site_code_2[i] == key$site_code_1[k]){
-      nestedness_df2$site_code_2ID[i] <- key$site_code_1ID[k]
-    }
-  }
-}
-nestedness_df2
+  mutate(Var1 = factor(Var1, levels = sort(unique(as.numeric(as.character(Var1)))))) %>%
+  mutate(Var2 = factor(Var2, levels = sort(unique(as.numeric(as.character(Var2))))))
 
 
-ggplot(nestedness_df2, aes(site_code_1ID, site_code_2ID, fill = Freq)) +
+ggplot(nestedness_df2, aes(Var1, Var2, fill = Freq)) +
   geom_tile() +
   scale_fill_gradient(low = "blue", high = "red", name = "Nestedness") +
   labs(x = "Sites (intersection / # spp. in Site X)", y = "Sites (intersection / # spp. in Site Y)", title = "Unidirectional Nestedness 2001-2003 Species & Genus above 32.5 lat") +
@@ -133,73 +119,58 @@ ggplot(nestedness_df2, aes(site_code_1ID, site_code_2ID, fill = Freq)) +
 
 # convert back to matrix
 nest3 <- nestedness_df2 %>%
-  select(c("site_code_1ID", "site_code_2ID", "Freq")) %>%
-  pivot_wider(names_from = site_code_1ID, values_from = Freq)
-
-colnames(nest3) <- paste0("X", colnames(nest3))
-nest3 <-  nest3 %>%
-  rename(rownames_df = Xsite_code_2ID)
-nest3 <- as.data.frame(nest3)
-rownames(nest3) <- nest3[, 1]
-nest3 <- nest3[, -1]
-
-
+  select(c("Var1", "Var2", "Freq")) %>%
+  pivot_wider(names_from = Var1, values_from = Freq)
+rownames(nest3) <- nest3$Var2
 
 # load in connectivity matrix (make sure orientation is the same)
-con_df <- read.csv('./data/filtered_MARINe_samp5000_2001_through_2003_count_to_from_poly.csv')
+con_df <- read.csv('./data/preliminary_processed_data/filtered_MARINe_2001_through_2003_count_to_from_poly.csv')
 
-# Define the full set of row names (1 to 64)
-all_rows <- 1:nrow(con_df)
-con_df <- as.data.frame(con_df)
-rownames(con_df) <- con_df[, 1]
-rownames_df <- con_df$polygon_id_origin
+con_df2 <- con_df[,4:ncol(con_df)]
 
-con_df <- con_df %>%
-  rename(rownames_df = polygon_id_origin)
-# Add missing rows and fill all columns with 0
-con_df_w <- con_df %>%
-  complete(rownames_df = all_rows, fill = as.list(rep(0, ncol(con_df) - 1)))
+######### make a split connectivity plot
+con_df2_symmetric <- con_df2 %>%
+  rename(X = log10_count) %>%  # Rename for clarity
+  inner_join(con_df2, 
+             by = c("origin_polygon_up" = "destination_polygon_up", 
+                    "destination_polygon_up" = "origin_polygon_up")) %>%
+  rename(Y = log10_count)  # Rename the second count column
 
-# Add missing columns
+ggplot(con_df2_symmetric, aes(x = X, y = Y)) +
+  geom_point() +
+  labs(x = "log10(Number of Floats (Origin → Destination))",
+       y = "log10(Number of Floats (Destination → Origin))",
+       title = "Symmetric Float Transitions") +
+  theme_minimal()
 
-all_columns <- paste0("X", 1:64)  # Define full column names
-missing_cols <- setdiff(all_columns, colnames(con_df_w))  # Find missing columns
-con_df_w[missing_cols] <- 0  # Add missing columns with 0
+################ combine connectivity with nestedness
 
-
-# Reorder the columns for consistency
-con_df_w <- con_df_w %>%
-  select(rownames_df, sort(names(con_df_w)[-1]))
-con_df_w <- con_df_w[, -1]
-numeric_order <- as.numeric(gsub("X", "", colnames(con_df_w)))
-con_df_w <- con_df_w[, order(numeric_order)]
-con_df_w[is.na(con_df_w)] <- 0
-
-con_df_w <- as.data.frame(con_df_w)
-
-
-# combine dataframes
-# Convert the tables to data frames in long format
-
-nest3 <- as.matrix(nest3)
-con_df_w <- as.matrix(con_df_w)
-
-table1_long <- as.data.frame(as.table(nest3))
-colnames(table1_long) <- c("Row", "Column", "Value1")
-table2_long <- as.data.frame(as.table(con_df_w))
-table2_long$Row <- as.numeric(table2_long$Var1)
-
-table2_long <- table2_long[, c("Row", "Var2", "Freq")]
-colnames(table2_long) <- c("Row", "Column", "Value2")
-
+colnames(con_df2)[colnames(con_df2) == "origin_polygon_up"] <- "Var1"
+colnames(con_df2)[colnames(con_df2) == "destination_polygon_up"] <- "Var2"
 # Merge the two tables based on Row and Column
-combined_df <- merge(table1_long, table2_long, by = c("Row", "Column"))
+combined_df <- merge(nestedness_df2, con_df2, by = c("Var1", "Var2"))
 
 
-ggplot(combined_df, aes(x = Value2, y = Value1)) +
+lm_model <- lm(Freq ~ log10_count, data = combined_df)
+
+# Get p-value from the summary of the linear model
+summary_model <- summary(lm_model)
+p_value <- summary_model$coefficients[2, 4] 
+
+ggplot(combined_df, aes(x = log10_count, y = Freq)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "blue") + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x="connectivity (log10 of count)", y="nestedness (1 being high)", title = "connectivity vs nestedness")
+
+
+
+combined_df$count <- 10^(combined_df$log10_count)
+
+ggplot(combined_df, aes(x = count, y = Freq)) +
   geom_point() +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x="connectivity", y="nestedness (1 being high)", title = "connectivity vs nestedness")
-
+  labs(x="connectivity (count)", y="nestedness (1 being high)", title = "connectivity vs nestedness")
 
