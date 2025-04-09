@@ -1,3 +1,6 @@
+# Combines directional nestedness and connectivity
+# Jordana Sevigny
+# Created: 12-2024 (around there - forgot to put this in)
 
 
 # load libraries
@@ -5,7 +8,7 @@ library(tidyverse)
 library(betapart)
 
 # load data
-survey_taxa_dmy <- data.frame(read.csv("./data/preliminary_processed_data/filtered_MARINe_survey_taxa_dmy.csv", header=TRUE))
+survey_taxa_dates <- data.frame(read.csv(here("data", "processed_data", "biodiversity", "marine_species_20241025_dates_20241028_merged.csv")))
 
 ## the data needs to be cleaned (some are species, some genus, some appear to have multiple names)
 ## this version will use species & genus and just 2001-2003
@@ -17,13 +20,13 @@ survey_taxa_dmy <- data.frame(read.csv("./data/preliminary_processed_data/filter
 
 ## I guess each survey will be considered a 'site' then the pairwise beta div attached to a single site could be averaged
 # add a column of the unique survey ID
-survey_taxa_dmy$survey_ID <- paste(survey_taxa_dmy$site_code, survey_taxa_dmy$survey_rep, sep="_")
+survey_taxa_dates$survey_ID <- paste(survey_taxa_dates$site_code, survey_taxa_dates$survey_rep, sep="_")
 
 # Taxanomic levels to use in order from narrowest to broadest!!
 taxa <- c("Species", "Genus")
 
 # # clean the data to only use 2001-2003 data
-# survey_tax_min_dmy <- survey_taxa_dmy %>%
+# survey_tax_min_dmy <- survey_taxa_dates %>%
 #   filter(lowest_taxonomic_resolution %in% taxa) %>%
 #   filter(year %in% c(2001, 2002, 2003)) %>%
 #   mutate(sample_date = as.Date(sample_date)) %>%
@@ -34,7 +37,7 @@ taxa <- c("Species", "Genus")
 #   filter(latitude > 32.5)
 
 # clean the data to use all but post 2020 data
-survey_tax_min_dmy <- survey_taxa_dmy %>%
+survey_tax_min_dmy <- survey_taxa_dates %>%
   filter(lowest_taxonomic_resolution %in% taxa) %>%
   filter(year <= 2020) %>%
   mutate(sample_date = as.Date(sample_date)) %>%

@@ -5,33 +5,31 @@
 
 # libraries
 library(tidyverse)
+library(here)
 
 # read in species presence data from MARINe surveys
-survey_taxa <- data.frame(read.csv("./data/jordana_sevigny_cbs_species_list_20241025.csv", header=TRUE))
+survey_taxa <- data.frame(read.csv(here("data", "marine_data", "jordana_sevigny_cbs_species_list_20241025.csv"), header=TRUE))
 
 # read in MARINe survey dates & remove replicate columns
-survey_dates <- data.frame(read.csv("./data/jordana_sevigny_cbs_survey_dates_20241028.csv", header=TRUE)) %>%
+survey_dates <- data.frame(read.csv(here("data", "marine_data", "jordana_sevigny_cbs_survey_dates_20241028.csv"), header=TRUE)) %>%
   select(-c("marine_sort_order", "year", "pc_point_type"))
 
 # merge datasets - add date column to survey_taxa (dmy = day, month, year)
-survey_taxa_dmy <- merge(survey_taxa, survey_dates, by=c("marine_site_name", "survey_rep"), all=TRUE) %>%
+survey_taxa_dates <- merge(survey_taxa, survey_dates, by=c("marine_site_name", "survey_rep"), all=TRUE) %>%
   rename("sample_date" = "Min.sample_date.")
 
 # write the dataset to data folder
-write.csv(x=survey_taxa_dmy, file="./data/MARINe_survey_taxa_dmy.csv")
+write.csv(x=survey_taxa_dates, file=here("data", "processed_data", "biodiversity", "marine_species_20241025_dates_20241028_merged.csv"))
 
 
-survey_taxa_dmy <- data.frame(read.csv("./data/preliminary_processed_data/MARINe_survey_taxa_dmy.csv"))
+# Trial loading in the merged dataframe
+survey_taxa_dates <- data.frame(read.csv(here("data", "processed_data", "biodiversity", "marine_species_20241025_dates_20241028_merged.csv")))
 # check for empty dates
-any(is.na(survey_taxa_dmy$sample_date))
+any(is.na(survey_taxa_dates$sample_date))
 # no missing dates
 
 # barplot of taxanomic resolution across all identifications for all surveys
-ggplot(data=survey_taxa_dmy, aes(x=lowest_taxonomic_resolution)) +
+ggplot(data=survey_taxa_dates, aes(x=lowest_taxonomic_resolution)) +
   geom_bar()
-ggsave("taxa_resolution_count.png")
+#ggsave("taxa_resolution_count.png")
 # could do everything at genus level... 
-
-demo <- survey_taxa_dmy %>%
-  select(marine_site_name) %>%
-  distinct()

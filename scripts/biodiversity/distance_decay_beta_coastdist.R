@@ -3,7 +3,6 @@
 # Example dataframes
 
 
-
 # load libraries
 library(here)
 library(tidyverse)
@@ -13,15 +12,15 @@ library(nlme)
 
 
 # load data
-survey_taxa_dmy <- data.frame(read.csv("./data/filtered_MARINe_survey_taxa_dmy.csv", header=TRUE))
+survey_taxa_dates <- data.frame(read.csv(here("data", "processed_data", "biodiversity", "marine_species_20241025_dates_20241028_merged.csv")))
 # add survey ID column
-survey_taxa_dmy$survey_ID <- paste(survey_taxa_dmy$site_code, survey_taxa_dmy$survey_rep, sep="_")
+survey_taxa_dates$survey_ID <- paste(survey_taxa_dates$site_code, survey_taxa_dates$survey_rep, sep="_")
 
 # Taxanomic levels to use in order from narrowest to broadest!!
 taxa <- c("Species", "Genus")
 
 # clean the data to only use species-resolved data
-survey_tax_min_dmy <- survey_taxa_dmy %>%
+survey_tax_min_dmy <- survey_taxa_dates %>%
   filter(lowest_taxonomic_resolution %in% taxa) %>%
   filter(year %in% c(2001, 2002, 2003)) %>%
   mutate(sample_date = as.Date(sample_date)) %>%
@@ -166,7 +165,7 @@ ggplot(distance_decay_lat, aes(x=geographic_distance, y=Freq, color=interregion)
     x = "Geographic distance (km)",
     y = "Jaccard Similarity"
   )
-ggsave("distance_decay_coastdist_V1.png")
+#ggsave("distance_decay_coastdist_V1.png")
 
 # model to compare inter and intra region pair-wise comparisons
 model <- lme(Freq ~ poly(geographic_distance, 1), random = ~ geographic_distance | interregion, data=distance_decay_lat)
