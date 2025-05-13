@@ -63,4 +63,5 @@ unique(df_joined$SampleID[is.na(df_joined$Location) | df_joined$Location == ""])
 any(df_joined$SampleID=="6ALCXE1W")
 unique(df_joined$Location)
 # Save as a new dataframe for further analysis
-write.csv(df_joined, here("data","processed_data", "biodiversity", "eDNA_summer204_allprimers_allmeta.csv"), row.names = FALSE)
+# THE eDNA FILE IS TOO BIG FOR GIT
+#write.csv(df_joined, here("data","processed_data", "biodiversity", "eDNA_summer2024_allprimers_allmeta.csv"), row.names = FALSE)

@@ -12,8 +12,9 @@ library(viridis)
 library(RColorBrewer)
 library(here)
 
+# THE eDNA FILE IS TOO BIG FOR GIT
 # Read in pre-processed eDNA data
-edna <- data.frame(read.csv(here("data","processed_data", "biodiversity", "eDNA_summer204_allprimers_allmeta.csv")))
+edna <- data.frame(read.csv(here("data","processed_data", "biodiversity", "eDNA_summer2024_allprimers_allmeta.csv")))
 
 # Find average hit number of blanks
 threshold <- edna %>%
