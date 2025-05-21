@@ -64,4 +64,4 @@ any(df_joined$SampleID=="6ALCXE1W")
 unique(df_joined$Location)
 # Save as a new dataframe for further analysis
 # THE eDNA FILE IS TOO BIG FOR GIT
-#write.csv(df_joined, here("data","processed_data", "biodiversity", "eDNA_summer2024_allprimers_allmeta.csv"), row.names = FALSE)
+write.csv(df_joined, here("data","processed_data", "biodiversity", "eDNA_summer2024_allprimers_allmeta.csv"), row.names = FALSE)

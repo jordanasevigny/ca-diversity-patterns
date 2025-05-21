@@ -30,7 +30,7 @@ primer2 <- 'MiFishU'
 primer3 <- 'UniCOI'
 
 edna_single_p <- edna %>%
-  filter(TestId==primer1)
+  filter(TestId==primer3)
 
 # Drop any samples with meta data, Group by ESVId and Location then sum Hits
 edna_grouped <- edna_single_p %>%
@@ -90,7 +90,7 @@ pheatmap(as.matrix(beta_sor_sorted),
          cluster_rows = FALSE,
          cluster_cols = FALSE,
          display_numbers = FALSE,
-         main = "Jaccard Beta Diversity (Sorted by Latitude) for Primer 18Sv9_89 - Dissimilarity",
+         main = "Jaccard Beta Diversity (Sorted by Latitude) for Primer UniCOI - Dissimilarity",
          color = viridis(100))
 
 # Plot to more closely match MARINe plotting
@@ -102,11 +102,10 @@ similarity_df <- as.data.frame(similarity_matrix) %>%
   rownames_to_column(var = "Var1") %>%
   pivot_longer(-Var1, names_to = "Var2", values_to = "Freq")
 
-# Now you can use your plotting code directly!
-ggplot(similarity_df, aes(x = Var1, y = Var2, fill = Freq)) +
-  geom_tile() +
-  scale_fill_gradient(low = "blue", high = "red", name = "Similarity") +
-  labs(x = "Sites", y = "Sites", title = "Jaccard Beta Diversity (Sorted by Latitude) for Primer UniCOI") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 6),
-        axis.text.y = element_text(size = 6))
+# ggplot(similarity_df, aes(x = Var1, y = Var2, fill = Freq)) +
+#   geom_tile() +
+#   scale_fill_gradient(low = "blue", high = "red", name = "Similarity") +
+#   labs(x = "Sites", y = "Sites", title = "Jaccard Beta Diversity (Sorted by Latitude) for Primer UniCOI") +
+#   theme_minimal() +
+#   theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 6),
+#         axis.text.y = element_text(size = 6))
