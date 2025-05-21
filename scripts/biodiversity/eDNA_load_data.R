@@ -10,7 +10,7 @@ library(here)
 
 
 # load metadata
-meta_df <- data.frame(read.csv(here("data", "edna_jv_data", "summer_2024", "Summer_Exped_And_Central_Coast_All_Metadata_2024.csv"))) %>%
+meta_df <- data.frame(read.csv(here("data", "edna_jv_data", "summer_2024", "Summer_Exped_And_Central_Coast_All_Metadata_2024_JKS.csv"))) %>%
   select(-X.)
 #meta_fall_df <- data.frame(read.csv(here("data", "edna_jv_data", "fall_2023", "JVB2844-samples.csv")))
 
@@ -59,9 +59,12 @@ df_joined <- df_joined %>%
   select(-SampleID) %>%
   rename(SampleID = SampleID_clean)
 
-unique(df_joined$SampleID[is.na(df_joined$Location) | df_joined$Location == ""])
-any(df_joined$SampleID=="6ALCXE1W")
-unique(df_joined$Location)
+# setdiff(meta_df$SampleID, df_joined$SampleID_clean)
+# meta_df$SampleID
+# df_joined$SampleID_clean
+# unique(df_joined$SampleID[is.na(df_joined$Location) | df_joined$Location == ""])
+# any(df_joined$SampleID=="ZOTLLVPY")
+# unique(df_joined$Location)
 # Save as a new dataframe for further analysis
 # THE eDNA FILE IS TOO BIG FOR GIT
 write.csv(df_joined, here("data","processed_data", "biodiversity", "eDNA_summer2024_allprimers_allmeta.csv"), row.names = FALSE)
