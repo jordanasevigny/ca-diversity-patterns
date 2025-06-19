@@ -102,6 +102,40 @@ for (site_a in 1:nrow(comm_data)) {
   }
 }
 
+#########################
+# ROUTE 1
+
+# Define a Mode function
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+site_lat <- survey_tax_min_dmy_siteid %>%
+  mutate(latitude = round(latitude, digits = 2)) %>%
+  filter(!is.na(latitude)) %>%
+  group_by(site_id) %>%
+  summarize(latitude = Mode(latitude)) %>%  # most common latitude per location
+  ungroup() %>%
+  filter( site_id %in% rownames(nestedness_matrix)) %>%
+  arrange(desc(latitude))  # use arrange(Latitude) for south to north
+
+# Reorder matrix
+# Convert site_id to character for indexing
+dn_sorted <- nestedness_matrix[as.character(site_lat$site_id), as.character(site_lat$site_id)]
+rownames(nestedness_matrix)
+setdiff(rownames(nestedness_matrix), site_lat$site_id)
+# Step 6: Plot heatmap
+pheatmap(as.matrix(dn_sorted),
+         cluster_rows = FALSE,
+         cluster_cols = FALSE,
+         display_numbers = FALSE,
+         main = "Directional Nestedness MARINe 2001-2003 (Y in X)",
+         color = gray.colors(100, start = 1, end = 0))
+
+
+#########################
+# ROUTE 2
 
 nestedness_df <- as.data.frame(as.table(nestedness_matrix))
 
@@ -205,7 +239,7 @@ p2 <- ggplot(combined_df2, aes(x = log10(count), y = Freq)) +
     x="Connectivity (log10[count])", 
     y="Nestedness (1 being more nested)", 
     title = "Nestedness (MARINe) vs Connectivity (raw count) 2001-2003\nExcludes same site comparisons") +
-  annotate("text", x = min(log10(combined_df_norm2$count), na.rm = TRUE), 
+  annotate("text", x = min(log10(combined_df2$count), na.rm = TRUE), 
            y = max(combined_df2$Freq, na.rm = TRUE), 
            label = paste0("R² = ", round(r_squared2, 2), 
                           ", p = ", format.pval(p_value2, digits = 3, eps = 0.001)),
@@ -284,3 +318,16 @@ p4 <- ggplot(combined_df_norm2, aes(x = log10(count_norm), y = Freq)) +
            hjust = 0, vjust = 1)
 
 (p1 | p2) / (p3 | p4)
+
+
+
+
+ggplot(combined_df_norm2, aes(x = count_norm, y = Freq)) +
+  geom_point() +
+ # geom_smooth(method = "lm", color = "blue") + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    x="Connectivity (count/total floats released by release cell)", 
+    y="Nestedness (1 being more nested)", 
+    title = "Nestedness (MARINe) vs Connectivity (normalized count) 2001-2003\nExcludes same site comparisons") 

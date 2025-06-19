@@ -26,16 +26,18 @@ primer2 <- 'MiFishU'
 primer3 <- 'UniCOI'
 
 edna_single_p <- edna %>%
-  filter(TestId==primer3)
+  filter(TestId==primer1)
 
-# Drop any samples with meta data, Group by ESVId and Location then sum Hits, drop 'coastal estuary' (Baja pen) and GuerroNegro (salt marsh) location
+# Drop any samples with meta data, Group by ESVId and Location then sum Hits, drop inland location
 edna_grouped <- edna_single_p %>%
   filter(!is.na(Location)) %>%
   group_by(ESVId, Location) %>%
   summarise(Total_Hits = sum(Hits, na.rm = TRUE), .groups = "drop") %>%
   filter(Total_Hits > threshold) %>% # set minimum threshold (currently it is average blank sample copy number)
   filter(Location != "coastal estuary") %>%
-  filter(Location != "GuerroNegro")
+  filter(Location != "GuerroNegro") %>%
+  filter(Location != "Catavina") %>%
+  filter(Location != "PlayaCoyote")
 
 # Create presence/absence matrix
 presence_matrix <- edna_grouped %>%
@@ -98,11 +100,15 @@ site_lat <- edna %>%
 
 # Reorder matrix
 dn_sorted <- nestedness_matrix[site_lat$Location, site_lat$Location]
-
-# Step 6: Plot heatmap
+my_breaks <- c(seq(0, 0.24, length.out = 20),
+               seq(0.25, 0.74, length.out = 10),
+               seq(0.75, 1, length.out = 20))
+# Plot heatmap
 pheatmap(as.matrix(dn_sorted),
          cluster_rows = FALSE,
          cluster_cols = FALSE,
          display_numbers = FALSE,
-         main = "Directional Nestedness PCE UniCOI",
-         color = rev(viridis(100)))
+         main = "Directional Nestedness PCE 18Sv9_89 (Y in X)",
+         color = gray.colors(length(my_breaks) - 1, start = 1, end = 0),
+         breaks = my_breaks)
+

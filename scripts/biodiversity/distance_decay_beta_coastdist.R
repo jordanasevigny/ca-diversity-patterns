@@ -16,7 +16,7 @@ survey_taxa_dates <- data.frame(read.csv(here("data", "processed_data", "biodive
 # add survey ID column
 survey_taxa_dates$survey_ID <- paste(survey_taxa_dates$site_code, survey_taxa_dates$survey_rep, sep="_")
 
-# Taxanomic levels to use in order from narrowest to broadest!!
+# Taxonomic levels to use in order from narrowest to broadest!!
 taxa <- c("Species", "Genus")
 
 # clean the data to only use species-resolved data

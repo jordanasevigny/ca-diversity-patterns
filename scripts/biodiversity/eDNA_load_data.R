@@ -55,11 +55,12 @@ df_joined <- df_long %>%
   left_join(meta_df, by = c("SampleID_clean" = "SampleID"))
 
 # THERE APPEARS TO BE ADDITIONAL SAMPLES IN THE EDNA THAT HAVE NO META DATA
+# JKS addressed above comment 2025 May 21. It's been handled. Notes are in JKS OneNote.
 df_joined <- df_joined %>%
   select(-SampleID) %>%
   rename(SampleID = SampleID_clean)
 
-# setdiff(meta_df$SampleID, df_joined$SampleID_clean)
+# setdiff(meta_df$SampleID, df_joined$SampleID)
 # meta_df$SampleID
 # df_joined$SampleID_clean
 # unique(df_joined$SampleID[is.na(df_joined$Location) | df_joined$Location == ""])
